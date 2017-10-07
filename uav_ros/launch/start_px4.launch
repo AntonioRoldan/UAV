@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="est" default="lpe"/> <!--lpe (for vision, indoor stuff), ekf2 (standard regulator for hardware), inav-->
+    <arg name="vehicle" default="iris"/> <!-- iris, iris_opt_flow, iris_rplida, solo, typhoon_h480 -->
+    <arg name="rcS" default="$(find px4)/posix-configs/SITL/init/$(arg est)/$(arg vehicle)"/>
+    <node name="sitl" pkg="px4" type="px4" output="screen" args="$(find px4) $(arg rcS)"></node>
+</launch>

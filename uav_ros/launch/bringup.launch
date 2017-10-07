@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find mascor_uav_workshop)/launch/start_px4.launch"></include>
+    <include file="$(find mascor_uav_workshop)/launch/start_gazebo_world.launch"></include>
+    <include file="$(find mascor_uav_workshop)/launch/start_mavros.launch"></include>
+    <include file="$(find mascor_uav_workshop)/launch/start_ar_track_alvar.launch"></include>
+    <node name="FramesPublisher" pkg="mascor_uav_workshop" type="FramesPublisher.py" output="screen" respawn="true"></node>
+    <node name="rviz_uav" pkg="rviz" type="rviz" output="screen" args="-d $(find mascor_uav_workshop)/cfg/config.rviz" />
+</launch>
